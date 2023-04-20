@@ -1,0 +1,36 @@
+{
+  "name": "sus",
+  "description": "Your app ded nisb sjbs on",
+  "repository": "https://github.com/sourov991/sus.git",
+  "keywords": ["telegram", "bot"],
+  "addons": [
+    {
+      "plan": "heroku-postgresql",
+      "as": "DATABASE"
+    }
+  ],
+  "buildpacks": [
+    {
+      "url": "heroku/python"
+    }
+  ],
+  "env": {
+    "TELEGRAM_BOT_TOKEN": {
+      "description": "Telegram bot token",
+      "required": true
+    },
+    "PORT": {
+      "description": "Port to run the application on",
+      "value": "8080"
+    }
+  },
+  "formation": {
+    "dynos": [
+      {
+        "type": "web",
+        "quantity": 1,
+        "size": "eco"
+      }
+    ]
+  }
+}
